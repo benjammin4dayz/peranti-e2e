@@ -1,3 +1,4 @@
+import * as scripts from "../peranti/scripts";
 // ***********************************************
 // This example commands.js shows you how to
 // create various custom commands and overwrite
@@ -23,3 +24,8 @@
 //
 // -- This will overwrite an existing command --
 // Cypress.Commands.overwrite('visit', (originalFn, url, options) => { ... })
+
+Cypress.Commands.add("openApplet", scripts.openApplet);
+Cypress.Commands.add("closeApplet", scripts.closeApplet);
+Cypress.Commands.add("readCodeMirror", scripts.readCodeMirror);
+Cypress.Commands.add("writeCodeMirror", scripts.writeCodeMirror);
