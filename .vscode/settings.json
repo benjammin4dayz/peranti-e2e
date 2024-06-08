@@ -1,0 +1,10 @@
+{
+    "files.exclude": {
+        "node_modules": false,
+        ".gitignore": false,
+        "cypress.config.js": false,
+        "jsconfig.json": true,
+        "LICENSE": true,
+        "package-lock.json": false,
+    }
+}
