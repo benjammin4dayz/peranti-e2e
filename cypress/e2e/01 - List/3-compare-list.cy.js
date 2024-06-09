@@ -1,5 +1,3 @@
-import { Main } from "./../../support/peranti/pages";
-
 beforeEach(() => {
   cy.openApplet("Compare List");
 });
@@ -10,14 +8,28 @@ afterEach(() => {
 
 describe("List A", () => {
   it("Allows direct text entry", () => {
-    cy.get(Main.InputCodeMirror).eq(0).type("test");
-    cy.contains("test").should("be.visible");
+    cy.writeCodeMirror("test", "input", 0);
+
+    cy.readCodeMirror(
+      (line) => {
+        expect(line).to.eq("test");
+      },
+      "input",
+      0
+    );
   });
 });
 
 describe("List B", () => {
   it("Allows direct text entry", () => {
-    cy.get(Main.InputCodeMirror).eq(1).type("test");
-    cy.contains("test").should("be.visible");
+    cy.writeCodeMirror("test", "input", 1);
+
+    cy.readCodeMirror(
+      (line) => {
+        expect(line).to.eq("test");
+      },
+      "input",
+      1
+    );
   });
 });
